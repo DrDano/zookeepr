@@ -1,0 +1,24 @@
+{
+  "name": "zookeepr",
+  "version": "1.0.0",
+  "description": "An API that promotes the storage and sharing of data at zoos. Are you a zoo looking for a manageable solution to your data problems? Zookeepr is that solution.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrDano/zookeepr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrDano/zookeepr/issues"
+  },
+  "homepage": "https://github.com/DrDano/zookeepr#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
