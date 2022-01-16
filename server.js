@@ -4,18 +4,37 @@ const { animals } = require('./data/animals.json');
 const app = express();
 
 function filterByQuery(query, animalsArray) {
-    let filteredResults = animalsArray
-    if (query.diet) {
-        filteredResults = filteredResults.filter(animal => animal.diet === query.diet);
-    }
-    if (query.species) {
-        filteredResults = filteredResults.filter(animal => animal.species === query.species);
-    }
-    if (query.name) {
-        filteredResults = filteredResults.filter(animal => animal.name === query.name);
+    let personalityTraitsArray = [];
+    // Note that we save the animalsArray as filteredResults here:
+    let filteredResults = animalsArray;
+    if (query.personalityTraits) {
+        // save personalityTraits as an array.
+        // if it is a string then place it into a new array
+
+        if (typeof query.personalityTraits === 'string') {
+            personalityTraitsArray = [query.personalityTraits];
+        } else {
+            personalityTraitsArray = query.personalityTraits
+        }
+        // Loop through each trait in array to produce filtered results
+        personalityTraitsArray.forEach(trait => {
+            filteredResults = filteredResults.filter(
+            animal => animal.personalityTraits.indexOf(trait) !== -1
+            );
+        });
     }
 
-    return filteredResults;
+    if (query.diet) {
+        filteredResults = filteredResults.filter(animal => animal.diet === query.diet);
+      }
+      if (query.species) {
+        filteredResults = filteredResults.filter(animal => animal.species === query.species);
+      }
+      if (query.name) {
+        filteredResults = filteredResults.filter(animal => animal.name === query.name);
+      }
+      // return the filtered results:
+      return filteredResults;
 }
 
 app.get('/api/animals', (req, res) => {
