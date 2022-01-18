@@ -162,6 +162,15 @@
         "hungry"
       ],
       "id": "16"
+    },
+    {
+      "name": "Elie",
+      "species": "Elephant",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "loving"
+      ],
+      "id": "17"
     }
   ]
 }
