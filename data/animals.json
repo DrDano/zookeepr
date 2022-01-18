@@ -139,7 +139,7 @@
     {
       "name": "Larry",
       "species": "lemur",
-      "die": "omnivore",
+      "diet": "omnivore",
       "personalityTraits": [
         "hungry"
       ],
